@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= title %></title>
+	  <!-- Bootstrap -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type="text/css" href='/stylesheets/style.css' />
+  </head>
+  <body>
+	  <!-- Nav -->
+    <%- include('partials/nav') %>
+    <!-- Title -->
+      <div class='container-fluid spinner d-flex justify-content-center align-items-center'>
+        <div id="loader"></div>
+      </div>      
+      <div class="container-fluid content title">
+      <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+          <div class="container text-center">
+            <img src="/images/work-24px.svg" id="userIcon"></img>
+            <h3>$ <%= insurance.price %></h3>
+            <p class="text-muted">MXN</p>
+          </div>
+        </div>
+        <div class="col-1 col-md-3"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-0 col-md-1"></div>
+        <div class="col-12 col-md-10">
+          <p class="text-muted">Especificaciones del seguro</p>
+        </div>
+        <div class="col-0 col-md-1"></div>
+      </div>
+    </div>
+    <div class="container-fluid content">
+      <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+          <div class="container bill-concept d-flex justify-content-between">
+            <p>Total de días asegurados</p>
+            <p><%= insurance.daysCovered %></p>
+          </div>
+          <div class="container bill-concept d-flex justify-content-between">
+            <p>Fecha de inicio</p>
+            <p>
+              <%= insurance.departureDate %>
+            </p>
+          </div>
+          <div class="container bill-concept d-flex justify-content-between">
+            <p>Fecha de fin</p>
+            <p>
+              <%= insurance.arrivalDate %>
+            </p>
+          </div>
+          <div class="container bill-concept d-flex justify-content-between">
+            <p>Zona</p>
+            <p>
+              <%= insurance.countryName %>
+            </p>
+          </div>
+        </div>
+        <div class="col-1 col-md-3"></div>
+      </div>
+  </div>
+  <div class="container-fluid content">
+    <div class="row">
+      <div class="col-1 col-md-3"></div>
+      <div class="col-10 col-md-6">
+        <div class="container bill-concept d-flex justify-content-between">
+          <p>Franquicia</p>
+          <p>$ 0.00</p>
+        </div>
+      </div>
+      <div class="col-1 col-md-3"></div>
+    </div>
+  </div>
+  <div class="container-fluid content">
+    <div class="row">
+      <div class="col-1 col-md-3"></div>
+      <div class="col-10 col-md-6">
+        <button class="btn btn-block promo" onclick="alert('Demo')">Añadir código</button>
+      </div>
+      <div class="col-1 col-md-3"></div>
+    </div>
+  </div>
+  <div class="container">
+    <p class="text-muted">
+      Cobertura
+    </p>
+  </div>
+  <div class="container-fluid content">
+    <div class="row">
+      <div class="col-1 col-md-3"></div>
+      <div class="col-10 col-md-6">
+        <div class="container d-flex justify-content-start align-items-center">
+          <img src="/images/headset_mic-24px.svg" class="spec"></img>
+          <p>Asistencia 24h instantánea y en español</p>
+        </div>
+        <div class="container d-flex justify-content-start align-items-center">
+          <img src="/images/local_hospital-24px.svg" class="spec"></img>
+          <p>
+            Gastos médicos de hasta 4M <small>MXN</small>
+          </p>
+        </div>
+        <div class="container d-flex justify-content-start align-items-center">
+          <img src="/images/work-24px.svg" class="spec"></img>
+          <p>Robo, daño o perdida de equipaje</p>
+        </div>
+        <div class="container d-flex justify-content-start align-items-center">
+          <img src="/images/airplanemode_inactive-24px.svg" class="spec"></img>
+          <p>Gastos de anulación de viaje (hasta 40 causas)</p>
+        </div>
+        <div class="container d-flex justify-content-start align-items-center">
+          <img src="/images/directions_walk-24px.svg" class="spec"></img>
+          <p>Indemnización por pérdida de vuelo</p>
+        </div>
+      </div>
+      <div class="col-1 col-md-3"></div>
+    </div>
+  </div>
+  <div class="container-fluid content">
+    <div class="row">
+      <div class="col-1 col-md-3"></div>
+      <div class="col-10 col-md-6">
+        <button class="btn btn-block promo" onclick="alert('Demo')">Ver resumen de cobertura (IPID)</button>
+      </div>
+      <div class="col-1 col-md-3"></div>
+    </div>
+  </div>
+    <div class="container-fluid content">
+      <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+          <div class="form-check" style="padding: 1rem 0;">
+            <input type="checkbox" class="form-check-input" id="termsCheck" onclick="checkTerms();">
+              <label class="form-check-label" for="termsCheck">Acepto los Términos y condiciones</label>
+          </div>
+          <form method="POST" action="/seguro_de_viaje/checkout">
+            <input id="insurance" name="insurance" type="hidden" value='<%-JSON.stringify(insurance)%>' ></input>
+            <button type="submit" value="Submit" class="btn btn-block" onclick="triggerSpinner()" id="checkOut" disabled="true">Contratar Seguro</button>
+          </form>
+          <br/>
+        </div>
+        <div class="col-1 col-md-3"></div>
+      </div>
+    </div>
+<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="/javascripts/interface.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<%if (valid == false) { %>
+<div class='backdrop errHandler' id='backdrop'></div>
+<div class="modal errHandler" id="errModal" tabindex="-1" role="dialog" aria-hidden="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+	  <div class="container d-flex flex-row-reverse">
+        <button type="button" class="close" onclick="dismiss('errHandler')" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        <div class="modal-body">
+        <% if (err == "format") {%>
+        <p>
+            <strong>El n&uacute;mero de cuenta ingresado no es v&aacute;lido</strong>
+        </p>
+        <p>
+            <small class="form-text text-muted">Tu cuenta se compone &uacute;nicamente de n&uacute;meros</small>
+        </p>
+        <% } else if(err == "user") { %>
+        <p>
+            <strong>Parece ser que este usuario no existe</strong>
+        </p>
+        <p>
+            <small class="form-text text-muted">Verifica tu n&uacute;mero de cuenta</small>
+        </p>
+        <% } else if(err == "connect") {%>
+		<p>
+            <strong>Error en conexi&oacute;n</strong>
+        </p>
+        <p>
+            <small class="form-text text-muted">Porfavor, intenta m&aacute;s tarde</small>
+        </p>
+		<% } else if(err == "date") {%>
+		<p>
+            <strong>&iexcl;No puedes contratar un seguro para un viaje pasado!</strong>
+        </p>
+        <p>
+            <small class="form-text text-muted">Porfavor, selecciona una fecha v&aacute;lida</small>
+        </p>
+		<% } else if(err == "region") {%>
+		<p>
+            <strong>Lo sentimos, este seguro no est&aacute; disponible para esta regi&oacute;n</strong>
+        </p>
+        <p>
+            <small class="form-text text-muted">Porfavor, selecciona otra regi&oacute;n</small>
+        </p>
+		<% } else if(err == "availability") {%>
+		<p>
+            <strong>Lo sentimos, el seguro solicitado no est&aacute; disonible</strong>
+        </p>
+        <p>
+            <small class="form-text text-muted">Porfavor, intenta de nuevo</small>
+        </p>
+		<% } %>
+        </div>
+        <div class="container d-flex justify-content-center">
+        <button type="btn" class="btn btn-block" onclick="dismiss('errHandler')">Volver a intentar</button>
+        </div>
+    </div>
+    </div>
+</div>
+<% } %>

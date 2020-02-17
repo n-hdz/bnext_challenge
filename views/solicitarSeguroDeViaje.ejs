@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= title %></title>
+	  <!-- Bootstrap -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type="text/css" href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <!-- Front-End Error Handling -->
+    <%- include('partials/errModal') %>
+	  <!-- Nav -->
+    <%- include('partials/nav') %>
+    <!-- Title -->
+      <div class='container-fluid spinner d-flex justify-content-center align-items-center'>
+        <div id="loader"></div>
+      </div>      
+    <div class="container-fluid content title">
+      <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+          <div class="container text-center">
+            <img src="/images/airplanemode_active-24px.svg" id="userIcon"></img>
+            <p class="text-muted">Que nada fastidie tu viaje</p>
+          </div>
+        </div>
+        <div class="col-1 col-md-3"></div>
+      </div>
+    </div>
+    <!-- Product -->
+    <div class="container">
+      <p class="text-center notation">
+        <small class="text-muted">seguro</small>
+      </p>
+      <h3 class="text-center"><%= insurance.shortName %></h3>
+    </div>
+    <!--Form -->
+      <form method="POST" action="/seguro_de_viaje/confirmar">
+        <div class="container">
+          <div class="row">
+            <div class="col-0 col-md-1"></div>
+            <div class="col-12 col-md-10">
+              <p class="text-muted">¿A donde vas a viajar?</p>
+            </div>
+            <div class="col-0 col-md-1"></div>
+          </div>
+        </div>
+        <div class="container-fluid content">
+          <div class="row">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-10 col-md-6">
+              <div class="container">
+                <div class="form-check faq d-flex align-items-center">
+                  <input class="form-check-input" type="radio" name="locale" id="radioSpain" value="es_ES" checked="true">
+                    <label class="form-check-label" for="exampleRadios1">
+                      Dentro de España
+                    </label>
+                  </div>
+                <div class="form-check faq">
+                  <input class="form-check-input" type="radio" name="locale" id="radioEurope" value="EURO">
+                    <label class="form-check-label" for="exampleRadios2">
+                      Europa (fuera de España)
+                    </label>
+                  </div>
+                <div class="form-check faq">
+                  <input class="form-check-input" type="radio" name="locale" id="radioElsewhere" value="MUN">
+                    <label class="form-check-label" for="exampleRadios3">
+                      Fuera de Europa
+                    </label>
+                  </div>
+              </div>
+            </div>
+            <div class="col-1 col-md-3"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-0 col-md-1"></div>
+            <div class="col-12 col-md-10">
+              <p class="text-muted">¿Cuándo te vas?</p>
+            </div>
+            <div class="col-0 col-md-1"></div>
+          </div>
+        </div>
+        <div class="container-fluid content">
+          <div class="row">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-10 col-md-6">
+              <div class="container">
+                <div class="form-group">
+                  <label for="departureDate">Fecha de Inicio:</label>
+                  <br/>
+                  <input class="form-control" type="date" name="departureDate" id="departureDate" required="true"></input>
+                </div>
+                <div class="form-group">
+                  <label for="departureDate">Fecha de Fin:</label>
+                  <br/>
+                  <input class="form-control" type="date" name="arrivalDate" id="arrivalDate" required="true"></input>
+                </div>
+              </div>
+            </div>
+            <div class="col-1 col-md-3"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-0 col-md-1"></div>
+            <div class="col-12 col-md-10">
+              <p class="text-muted">¿A quién quieres que cubra el seguro?</p>
+            </div>
+            <div class="col-0 col-md-1"></div>
+          </div>
+        </div>
+        <div class="container-fluid content">
+          <div class="row">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-10 col-md-6">
+              <div class="form-group">
+                <label for="userSelect">Usuario:</label>
+                <select class="form-control" id="userSelect" name="insuredUser">
+                  <option>Adrian Cortes</option>
+                  <option>Jacobo Miralles</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-1 col-md-3"></div>
+          </div>
+        </div>
+        <br/>
+        <div class="container">
+          <div class="row">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-10 col-md-6">
+              <button type="submit" class="btn btn-block" onclick="triggerSpinner();">Continuar</button>
+            </div>
+            <div class="col-1 col-md-3"></div>
+          </div>
+        </div>
+        <br/>
+      </form>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="/javascripts/interface.js"></script>
+  </body>
+</html>

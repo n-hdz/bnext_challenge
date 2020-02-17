@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= title %></title>
+	  <!-- Bootstrap -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type="text/css" href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <!-- Front-End Error Notification and Handling -->
+    <%- include('partials/errModal') %>
+	  <!-- Nav -->
+    <%- include('partials/nav') %>
+    <!-- Title -->
+      <div class='container-fluid spinner d-flex justify-content-center align-items-center'>
+        <div id="loader"></div>
+      </div>      
+      <div class="container-fluid content title">
+      <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+          <div class="container text-center">
+            <img src="/images/airplanemode_active-24px.svg" id="userIcon"></img>
+            <p class="text-muted">Que nada fastidie tu viaje</p>
+          </div>
+        </div>
+        <div class="col-1 col-md-3"></div>
+      </div>
+    </div>
+    <!-- Form -->
+    <div class="container-fluid content">
+        <div class="row">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-10 col-md-6">
+              <!-- Insurance Menu -->
+              <div class="container option">
+                <button class="btn btn-block option" onclick="triggerSpinner();location.href='/seguro_de_viaje/nuevo'" role="button">
+                  <img src="/images/add_circle-24px.svg"></img> Contratar nuevo seguro
+                </button>
+              </div>
+            </div>
+            <div class="col-1 col-md-3"></div>
+        </div>
+    </div>
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="/javascripts/interface.js"></script>
+  </body>
+</html>

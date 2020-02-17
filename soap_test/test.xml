@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://commonsws.soa.travelio.xpt.es/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <com:getProduct>
+         <authenticationData>
+            <domain>intermundial-soaMexico</domain>
+            <locale>es_ES</locale>
+            <password>pruebas_mex</password>
+            <user>pruebas_mex</user>
+         </authenticationData>
+         <shortName>YMX123</shortName>
+      </com:getProduct>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,136 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Body>
+    <ns2:getAvailabilityV2Response xmlns:ns2="http://commonsws.soa.travelio.xpt.es/">
+      <availableProducts>
+        
+        <product>
+          <code>d4d366db-eb0f-4456</code>
+            <shortName>YMX123</shortName>
+            <longName>AM PRUBA 15 14</longName>
+            <type>SERVICE</type>
+            <location/>
+            <qualities>
+              <code>9e6aa18e-e959-4afe-831f-a25e1cf7380c</code>
+              <shortName>Gen</shortName><longName>General</longName>
+            </qualities>
+            <fillFinalClientsMode>ALL</fillFinalClientsMode>
+          
+            <productCategorization>
+              <code>5d375d60-ef12-4b56</code>
+              <shortName>radial EURO</shortName>
+              <longName>radial EURODIVISAS</longName>
+              <typeID>SERVICE</typeID>
+            </productCategorization>
+          
+          </product>
+        
+          <varietyCombinations>
+            <modalitiesInfo>
+              <futureBookingState>IN_AGREEMENT</futureBookingState>
+              <modality>
+                <code>e62943b2-e36c-4614</code>
+                <shortName>MEXICO</shortName>
+              </modality>
+              <sellCurrency>
+                <code>MXN</code>
+              </sellCurrency>
+              <sellPrice>24.40</sellPrice>
+            </modalitiesInfo>
+            <modalitiesInfo>
+              <futureBookingState>IN_AGREEMENT</futureBookingState>
+              <modality>
+                <code>cc7e23e6-1981-4755</code>
+                <shortName>LATAM/CARIBE</shortName>
+              </modality>
+              <sellCurrency>
+                <code>MXN</code>
+              </sellCurrency>
+              <sellPrice>48.32</sellPrice>
+            </modalitiesInfo>
+            <modalitiesInfo>
+              <futureBookingState>IN_AGREEMENT</futureBookingState>
+              <modality>
+                <code>b022557b-b581-4458-98eb-8ac1581bfab9</code>
+                <shortName>MUN</shortName>
+              </modality>
+              <sellCurrency>
+                <code>MXN</code>
+              </sellCurrency>
+              <sellPrice>60.00</sellPrice>
+            </modalitiesInfo>
+            
+            <varietyDistributions>
+              <priceInfo>
+                <bookingStatus>IN_AGREEMENT</bookingStatus>
+                <currencyCode>MXN</currencyCode>
+                <modality>
+                  <code>cc7e23e6-1981-4755</code>
+                  <shortName>LATAM/CARIBE</shortName>
+                  <longName>LATAM/CARIBE</longName>
+                </modality>
+                <price>48.32</price>
+                <sellContract>
+                  <code>7734dd1c-d10b-414f</code>
+                </sellContract>
+                <sellPriceSheet>
+                  <code>e1d8ab55-4d5c-47c8</code>
+                </sellPriceSheet>
+                <sellTariff>
+                  <code>7699a8cd-9ed0-4353</code>
+                </sellTariff>
+              </priceInfo>
+              <priceInfo>
+                <bookingStatus>IN_AGREEMENT</bookingStatus>
+                <currencyCode>MXN</currencyCode>
+                <modality>
+                  <code>b022557b-b581-4458-98eb-8ac1581bfab9</code>
+                  <shortName>MUN</shortName>
+                  <longName>Mundo</longName>
+                </modality>
+                <price>60.00</price>
+                <sellContract>
+                  <code>7734dd1c-d10b-414f</code>
+                </sellContract>
+                <sellPriceSheet>
+                  <code>e1d8ab55-4d5c-47c8</code>
+                </sellPriceSheet>
+                <sellTariff>
+                  <code>7699a8cd-9ed0-4353</code>
+                </sellTariff>
+              </priceInfo>
+              <priceInfo>
+                <bookingStatus>IN_AGREEMENT</bookingStatus>
+                <currencyCode>MXN</currencyCode>
+                <modality>
+                  <code>e62943b2-e36c-4614</code>
+                  <shortName>MEXICO</shortName>
+                  <longName>MEXICO</longName>
+                </modality>
+                <price>24.40</price>
+                <sellContract>
+                  <code>7734dd1c-d10b-414f</code>
+                </sellContract>
+                <sellPriceSheet>
+                  <code>e1d8ab55-4d5c-47c8</code>
+                </sellPriceSheet>
+                <sellTariff>
+                  <code>7699a8cd-9ed0-4353</code>
+                </sellTariff>
+              </priceInfo>
+              
+              <productVariety>
+                <code>default</code>
+                <shortName>General</shortName>
+                <longName>Variedad General</longName>
+                <locale>es_ES</locale>
+                <adults>1</adults>
+                <children>0</children>
+              </productVariety>
+            </varietyDistributions>
+            
+          </varietyCombinations>
+        
+      </availableProducts>
+    </ns2:getAvailabilityV2Response>
+  </soap:Body>
+</soap:Envelope>

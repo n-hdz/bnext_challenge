@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= title %></title>
+	  <!-- Bootstrap -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' type="text/css" href='/stylesheets/style.css' />
+  </head>
+  <body>
+	  <!-- Nav -->
+    <%- include('partials/nav') %>
+    <!-- Title -->
+      <div class='container-fluid spinner d-flex justify-content-center align-items-center'>
+        <div id="loader"></div>
+      </div>      
+      <div class="container-fluid content title">
+      <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+          <div class="container text-center">
+            <img src="/images/airplanemode_active-24px.svg" id="userIcon"></img>
+            <p class="text-muted">Que nada fastidie tu viaje</p>
+          </div>
+        </div>
+        <div class="col-1 col-md-3"></div>
+      </div>
+    </div>
+    <!-- Product -->
+    <div class="container">
+      <p class="text-center notation">
+        <small class="text-muted">seguro</small>
+      </p>
+      <h3 class="text-center"><%= insurance.shortName %></h3>
+    </div>
+      <!-- Sticky Button -->
+      <br/>
+      <div class="container sticky-top calc" id="sticky">
+        <div class="row">
+          <div class="col-1 col-md-3"></div>
+          <div class="col-10 col-md-6">
+            <button class="btn btn-block" onclick="triggerSpinner();location.href='/seguro_de_viaje/solicitud'">Calcular seguro</button>
+          </div>
+          <div class="col-1 col-md-3"></div>
+        </div>
+      </div>
+      <br/>
+    <div class="container">
+      <p class="text-muted">
+        Especificaciones
+      </p>
+    </div>
+    <div class="container-fluid content">
+        <div class="row">
+            <div class="col-1 col-md-3"></div>
+            <div class="col-10 col-md-6">
+              <div class="container d-flex justify-content-start align-items-center">
+                <img src="/images/headset_mic-24px.svg" class="spec"></img><p>Asistencia 24h instantánea y en español</p>
+              </div>
+              <div class="container d-flex justify-content-start align-items-center">
+                <img src="/images/local_hospital-24px.svg" class="spec"></img><p>Gastos médicos de hasta 4M <small>MXN</small></p>
+              </div>
+              <div class="container d-flex justify-content-start align-items-center">
+                <img src="/images/work-24px.svg" class="spec"></img><p>Robo, daño o perdida de equipaje</p>
+              </div>
+              <div class="container d-flex justify-content-start align-items-center">
+                <img src="/images/airplanemode_inactive-24px.svg" class="spec"></img><p>Gastos de anulación de viaje (hasta 40 causas)</p>
+              </div>
+              <div class="container d-flex justify-content-start align-items-center">
+                <img src="/images/directions_walk-24px.svg" class="spec"></img><p>Indemnización por pérdida de vuelo</p>
+              </div>
+            </div>
+            <div class="col-1 col-md-3"></div>
+        </div>
+    </div>
+      <!-- Sticky Stop -->
+      <br/>
+      <div class="container">
+        <div class="row">
+          <div class="col-1 col-md-3"></div>
+          <div class="col-10 col-md-6">
+            <br/>
+          </div>
+          <div class="col-1 col-md-3"></div>
+        </div>
+      </div>
+      <br/>
+    <!-- Vendor -->
+    <div class="container">
+      <p class="text-muted">
+        Proveedor del producto
+      </p>
+    </div>
+    <div class="container-fluid content">
+      <div class="row">
+        <div class="col-1 col-md-3"></div>
+        <div class="col-10 col-md-6">
+          <img src="/images/intermundial_logo.png" class="mx-auto d-block logo"></img>
+        </div>
+        <div class="col-1 col-md-3"></div>
+      </div>
+    </div>
+      <!-- FAQ -->
+      <div class="container">
+        <p class="text-muted">
+          Preguntas Frecuentes
+        </p>
+      </div>
+      <div class="container-fluid content">          
+            <div id="accordion">
+              <div class="container faq">
+                  <h5 class="mb-0">
+                    <button class="btn btn-block option" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      ¿Donde estoy cubierto?
+                    </button>
+                  </h5>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+                    Lorem Ipsum Dolor Sit ammet...
+                  </div>
+                </div>
+              </div>
+              
+              <div class="container faq">
+                  <h5 class="mb-0">
+                    <button class="btn btn-block option" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      ¿Qué no está asegurado?
+                    </button>
+                  </h5>
+                
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    Lorem Ipsum Dolor Sit ammet...
+                  </div>
+                </div>
+              </div>
+              
+              <div class="container faq">
+                  <h5 class="mb-0">
+                    <button class="btn btn-block option" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      ¿Cual es la entidad aseguradora?
+                    </button>
+                  </h5>
+                
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    Lorem Ipsum Dolor Sit ammet...
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+     
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="/javascripts/interface.js"></script>
+  </body>
+</html>
