@@ -165,7 +165,7 @@ function intermundialGetProduct() {
             'SOAPAction': 'GET'
         }
         // Hardcoded getProduct Envelope
-        const xml = fs.readFileSync('soap_test/test.xml', 'utf-8');
+        const xml = fs.readFileSync('soap/product.xml', 'utf-8');
 
         (async () => {
             const { response } = await soapRequest({
